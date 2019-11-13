@@ -12,7 +12,7 @@ class UDPTransport:
         self._s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
     def send_json(self, message):
-        self._s.sendto(json.dumps(message), self._t)
+        self._s.sendto(json.dumps(message).encode('utf-8'), self._t)
 
 
 class FFWD:
